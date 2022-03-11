@@ -8,9 +8,19 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
+            Console.Write("What's your name? ");
+            string humanPlayerName = Console.ReadLine();
+            Player humanPlayer = new HumanPlayer();
+            humanPlayer.Name = humanPlayerName;
+
+
             Player player1 = new Player();
             player1.Name = "Bob";
 
+            humanPlayer.Play(player1);
+
+            Console.WriteLine("-------------------");
+            
             Player player2 = new Player();
             player2.Name = "Sue";
 
@@ -43,6 +53,7 @@ namespace ShootingDice
             oneHigherPlayer.Name = "Wiliiam Winsagain";
 
             oneHigherPlayer.Play(player2);
+
 
             Console.WriteLine("-------------------");
 
