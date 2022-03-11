@@ -32,18 +32,22 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
-           SmackTalkingPlayer smackTalkPlayer = new SmackTalkingPlayer("You're not gonna win, sucker!");
-           smackTalkPlayer.Name = "Rudy McRuderson";
-           
-           
+            Player smackTalkPlayer = new SmackTalkingPlayer("You're not gonna win, sucker!");
+            smackTalkPlayer.Name = "Rudy McRuderson";
 
-           player2.Play(smackTalkPlayer);
-           
+            player2.Play(smackTalkPlayer);
+
+            Console.WriteLine("-------------------");
+
+            Player oneHigherPlayer = new OneHigherPlayer();
+            oneHigherPlayer.Name = "Wiliiam Winsagain";
+
+            oneHigherPlayer.Play(player2);
 
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, smackTalkPlayer
+                player1, player2, player3, large, smackTalkPlayer, oneHigherPlayer
             };
 
             PlayMany(players);
@@ -76,7 +80,7 @@ namespace ShootingDice
                 Player player1 = shuffledPlayers[i];
                 Player player2 = shuffledPlayers[i + 1];
                 player1.Play(player2);
-                
+
             }
         }
     }
